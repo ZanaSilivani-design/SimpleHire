@@ -1,0 +1,112 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing:border-box;
+}
+body {
+    background: #444444;
+    color: #ffffff
+}
+.bg-img {
+    background-image: url('../images/img1.jpg');
+    height:90vh;
+    width:100%;
+    background-size:cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.wrapper{
+    position:absolute;
+    top: 50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    width:100%
+}
+
+.ab-bg-img {
+    background-image: url('../images/img2.jpg');
+    height: 93vh;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.ab-wrapper {
+    position: absolute;
+    top: 50%;
+    transform: translate(5%,-50%);
+    width:80%;
+}
+.ab-sm-heading {
+
+}
+.ab-lg-heading {
+    margin-top:-.3em;
+}
+.twrapper{
+    display: flex;
+    justify-content:center
+}
+.tcards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-gap: 15px;
+    width:90%;
+}
+.tcard {
+    position: relative;
+    background: #272727;
+    padding: 1em;
+    width: 300px;
+    border-radius: 0.5em;
+}
+.icon > i{
+    font-size: 4rem;
+}
+.experience{
+    position: absolute; 
+    top: 0.5em;
+    right: 1em;
+}
+.tadd{
+    position: absolute;
+    top: 50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    width: 100%;
+}
+.tform {
+    background: #272727;
+    padding: 3em;
+    border-radius:0.5em;
+    max-width: 600px;
+    margin:auto;
+}
+.dwrapper {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 100%;
+}
+.dcard {
+    background: #272727;
+    padding: 3em;
+    border-radius: 0.5em;
+    max-width: 600px;
+    margin: auto;
+}

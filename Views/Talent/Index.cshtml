@@ -1,0 +1,31 @@
+﻿@model List<Info>
+@{
+    ViewData["Title"] = "Talet page";
+}
+<h1 class="display-5 fw-bold text-center mt-5 mb-5">See all the talents here</h1>
+<div class="twrapper">
+    <div class="tcards">
+
+        @foreach (var talent in Model)
+            {
+            <div class="tcard">
+                <div class="icon"><i class="fa-solid fa-user-tie mb-3"></i></div>
+                <div class="text-info fw-bold fs-3">@talent.Name</div>
+                <div class="text-light fw-bold"><i class="fa-solid fa-envelope"></i> @talent.Email</div>
+                <div class="text-light fw-bold"><i class="fa-solid fa-phone"></i> @talent.Phone</div>
+                <div class="experience fw-bold fs-4 text-info">Exp: @talent.YearExp</div>
+                <div><i class="fa-solid fa-graduation-cap"></i> I have <span class="text-info fw-bold">@talent.Major</span> degree, looking for <span class="text-info fw-bold">@talent.Job.Name</span> job</div>
+                <div class="mt-4">
+                    <a class="fw-bold text-decoration-none text-dark btn btn-info me-2" 
+                    asp-controller="Talent" asp-action="Edit" asp-route-id="@talent.InfoId"><i class="fa-solid fa-pen-to-square"></i> Edit</a>
+                    <a class="fw-bold text-decoration-none text-dark btn btn-info"
+                   asp-controller="Talent" asp-action="Delete" asp-route-id="@talent.InfoId"><i class="fa-solid fa-trash"></i> Delete</a>
+                </div>
+
+            </div>
+        }
+    </div>
+</div>
+<div class="d-flex justify-content-center">
+    <a class="addnew btn btn-info fw-bold mt-5 mb-5" asp-controller="Talent" asp-action="Add">Add a New Talent</a>
+</div>

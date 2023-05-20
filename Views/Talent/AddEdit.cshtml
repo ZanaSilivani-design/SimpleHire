@@ -1,0 +1,45 @@
+﻿@model Info
+@{
+    ViewBag.Title = ViewBag.Action + " Talent";
+}
+
+<div class="tadd">
+<form class="tform" asp-action="Save" method="post">
+        <h2 class="text-center text-info fw-bold">@ViewBag.Title</h2>
+    <div asp-validation-summary="All" class="text-danger"></div>
+    <div class="form-group mb-3">
+        <label asp-for="Name">Full Name</label>
+        <input asp-for="Name" class="form-control" />
+    </div>
+        <div class="form-group mb-3">
+        <label asp-for="YearExp">Years Of Experience</label>
+        <input asp-for="YearExp" class="form-control" />
+    </div>
+        <div class="form-group mb-3">
+        <label asp-for="Email">Email</label>
+        <input asp-for="Email" class="form-control" />
+    </div>
+        <div class="form-group mb-3">
+        <label asp-for="Phone">Phone</label>
+        <input asp-for="Phone" class="form-control" />
+    </div>
+        <div class="form-group mb-3">
+        <label asp-for="Major">Your Major</label>
+        <input asp-for="Major" class="form-control" />
+    </div>
+        <div class="form-group mb-3">
+        <label asp-for="JobId">Field you are looking for</label>
+        <select asp-for="JobId" class="form-control">
+            <option value="">Select a job</option>
+            @foreach (Job J in ViewBag.Jobs)
+            {
+                <option value="@J.JobId">@J.Name</option>
+            }
+        </select>
+    </div>
+
+    <input type="hidden" asp-for="InfoId" />
+        <button type="submit" class="btn btn-info mt-4">@ViewBag.Action</button>
+        <a asp-controller="Talent" asp-action="Index" class="btn btn-info mt-4"><i class="fa-solid fa-xmark"></i> Cancel</a>
+</form>
+</div>
